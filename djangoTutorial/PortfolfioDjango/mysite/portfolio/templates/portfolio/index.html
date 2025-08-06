@@ -1,0 +1,290 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'portfolio/styles.css' %}">
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teo Marcyniuk - Portfolio</title>
+
+    <link rel="icon" type="image/png" href="../../static/portfolio/images/logo_favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+
+<body class="body">
+    <div class="header">
+        <div class="header_fotos">
+            <img src="../../static/portfolio/images/logo_header.png" alt="Logo.png">
+        </div>
+    
+        <div class="header_items">
+            <a href="#sobre_mi">Sobre Mi</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#proyectos">Proyectos</a>
+        </div>
+
+        <div class="header_fotos" id="Modo Oscuro">
+            <button onclick="toggleTheme()">
+                <i class="fas fa-moon theme-toggle-icon" id="themeIcon"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="seccion_superior">
+        <div>
+            <h1>Teo Marcyniuk</h1>
+        </div>
+        <div class="perfil">
+            <img src="../../static/portfolio/images/logo_header.png" alt="Logo.png" style="width: 300px; height: 300px; margin-top: 50px;">
+        </div>
+    </div>
+
+    <div id="sobre_mi" class="seccion_1">
+        <div>
+            <h1>Sobre Mi</h1>
+        </div>  
+        
+        <div class="seccion_1_contenido">
+            <img src="../../static/portfolio/images/foto_compu.png" alt="foto_compu" style="height: 300px; width: 300px;">
+    
+            <p> Soy estudiante de 4° año en el Colegio Industrial Luis A. Huergo, con orientación en informática. Me apasiona la tecnología y la programación, y tengo experiencia tanto en desarrollo front-end como back-end, trabajando con una variedad de lenguajes y herramientas. <br><br>
+                Actualmente complemento mi formación técnica con cursos de Cisco Networking Academy, y cuento con el FIRST CERTIFICATE de Inglés, emitido por Cambridge English Language Assessment, lo que me permite desenvolverme en contextos tanto locales como internacionales. <br><br>
+                Estoy en constante aprendizaje y busco seguir creciendo como desarrollador, explorando nuevas tecnologías y enfrentando desafíos que me permitan poner en práctica mis conocimientos.</p>
+        </div>
+    </div>
+
+    <div id="habilidades" class="seccion_2">
+        <h1>Mis Habilidades Técnicas</h1>
+        
+        <div class="habilidades_items">
+            <div class="bloque_habilidades">
+                <h2><i class="fas fa-paint-brush"></i> Front-End & Diseño</h2>
+
+                <div class="skills_grid">
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" class="skill_item">
+                        <i class="fab fa-html5 skill_icon"></i>
+                        <span class="skill_name">HTML5</span>
+                    </a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" class="skill_item">
+                        <i class="fab fa-css3-alt skill_icon"></i>
+                        <span class="skill_name">CSS3</span>
+                    </a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="skill_item">
+                        <i class="fab fa-js-square skill_icon"></i>
+                        <span class="skill_name">JavaScript</span>
+                    </a>
+                    <a href="https://www.adobe.com/products/photoshop.html" target="_blank" class="skill_item">
+                        <i class="fas fa-image skill_icon"></i>
+                        <span class="skill_name">Photoshop</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bloque_habilidades">
+                <h2><i class="fas fa-server"></i> Back-End & Programación</h2>
+
+                <div class="skills_grid">
+                    <a href="https://www.python.org" target="_blank" class="skill_item">
+                        <i class="fab fa-python skill_icon"></i>
+                        <span class="skill_name">Python</span>
+                    </a>
+                    <a href="https://www.mysql.com" target="_blank" class="skill_item">
+                        <i class="fas fa-database skill_icon"></i>
+                        <span class="skill_name">MySQL</span>
+                    </a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="skill_item">
+                        <i class="fab fa-js-square skill_icon"></i>
+                        <span class="skill_name">JavaScript</span>
+                    </a>
+                    <a href="https://git-scm.com" target="_blank" class="skill_item">
+                        <i class="fab fa-git-alt skill_icon"></i>
+                        <span class="skill_name">Git</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="proyectos" class="seccion_3">
+        <h1>Mis Proyectos</h1>
+        
+        <div class="proyectos_container">
+            <div class="proyectos_wrapper" id="proyectosWrapper">
+                <div class="proyecto_item">
+                    <div class="proyecto_card">
+                        <div class="proyecto_imagen">
+                            <img src="../../static/portfolio/images/logo_header.png" alt="Logo.png" style="width: 100px; height: 100px;">
+                        </div>
+                        <div class="proyecto_contenido">
+                            <h3 class="proyecto_titulo">Portfolio Personal</h3>
+                            <p class="proyecto_descripcion">
+                                Sitio web personal desarrollado con HTML5, CSS3 y JavaScript. Incluye secciones interactivas, diseño responsivo y animaciones fluidas que proporcionan una experiencia de usuario moderna y atractiva.
+                            </p>
+                            <a class="proyecto_descripcion" href="https://github.com/TMarcyniuk/TP_2_Html">Ver Código</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proyecto_item">
+                    <div class="proyecto_card">
+                        <div class="proyecto_imagen">
+                            <img src="../../static/portfolio/images/space_invaders.png" alt="Space Invaders" style="width: 100px; height: 100px; object-fit: cover;">
+                        </div>
+                        <div class="proyecto_contenido">
+                            <h3 class="proyecto_titulo">Space Invaders</h3>
+                            <p class="proyecto_descripcion">
+                                Juego desarrollado plenamente en python que intenta replicar y mejorar el reconocido juego arcade.
+                            </p>
+                            <a class="proyecto_descripcion" href="https://github.com/TMarcyniuk/Space_Invaders_Marcyniuk">Ver Código</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proyecto_item">
+                    <div class="proyecto_card">
+                        <div class="proyecto_imagen">
+                            <img src="../../static/portfolio/images/stick_brawl.png" alt="Stick Brawl" style="width: 100px; height: 100px; object-fit: cover;">
+                        </div>
+                        <div class="proyecto_contenido">
+                            <h3 class="proyecto_titulo">Stick Brawl</h3>
+                            <p class="proyecto_descripcion">
+                                Juego de Pelea desarrollado con python de 2 jugadores con animaciones originales.
+                            </p>
+                            <a class="proyecto_descripcion" href="https://github.com/TMarcyniuk/Stick-Brawl-3-AO">Ver Código</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav_arrows">
+                <button class="nav_arrow nav_arrow_left" onclick="previousSlide()" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav_arrow nav_arrow_right" onclick="nextSlide()" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-contactame">
+            <h1 class="footer-logo">Contactame</h1>
+            <input type="text" placeholder="Tu nombre" id="userName" >
+            <textarea placeholder="Tu mensaje" id="userMessage"></textarea>
+            <button class="CV" onclick="clearForm()">Enviar</button>
+            <a href="https://wiki.openstreetmap.org/w/images/8/83/CV_Ishan_Agrawal.pdf" download="CV_Ishan_Agrawal.pdf" class="CV" style="text-decoration: none; display: inline-block; text-align: center;">Descargar CV</a>
+        </div>
+        <div class="footer_items">
+            <a class="skill_item" href="https://github.com/TMarcyniuk">
+                <i class="fab fa-github"></i>
+            </a>
+            <a class="skill_item" href="https://www.instagram.com/teo_marcy/">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 3;
+        let isTransitioning = false;
+
+       
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('themeIcon');
+            
+            body.classList.toggle('light-mode');
+            
+        
+            if (body.classList.contains('light-mode')) {
+                themeIcon.className = 'fas fa-sun theme-toggle-icon';
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeIcon.className = 'fas fa-moon theme-toggle-icon';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+
+        function clearForm() {
+            document.getElementById('userName').value = '';
+            document.getElementById('userMessage').value = '';
+        }
+
+        function goToSlide(slideIndex) {
+            if (isTransitioning) return;
+            
+            isTransitioning = true;
+            currentSlide = slideIndex;
+            updateCarousel();
+            
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 600);
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                goToSlide(currentSlide + 1);
+            }
+        }
+
+        function previousSlide() {
+            if (currentSlide > 0) {
+                goToSlide(currentSlide - 1);
+            }
+        }
+
+        function updateCarousel() {
+            const wrapper = document.getElementById('proyectosWrapper');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            const translateX = -currentSlide * (100 / totalSlides);
+            wrapper.style.transform = `translateX(${translateX}%)`;
+            
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCarousel();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            const projectsSection = document.getElementById('proyectos');
+            const rect = projectsSection.getBoundingClientRect();
+            
+            if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    previousSlide();
+                }
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
