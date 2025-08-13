@@ -3,5 +3,5 @@ from .models import Project
 
 class IndexView(ListView):
     model = Project 
-    template_name = "portfolio/index.html"
+    template_name = "blog/index.html"
     context_object_name = "projects"  
