@@ -1,8 +1,8 @@
-from django.urls import path
+from django.urls import path, include
+from . import views 
 
-from .views import IndexView
 
-app_name = "blog"
+app_name = "blog_post"
 urlpatterns = [
-    path('', IndexView.as_view(), name='main'),
+    path('', views.post_list, name='posts_lists'),
 ]
