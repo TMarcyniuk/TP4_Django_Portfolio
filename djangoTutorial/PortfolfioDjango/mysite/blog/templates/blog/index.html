@@ -5,7 +5,7 @@
 
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>blog.html</title>
 </head>
@@ -18,6 +18,28 @@
             <a href="http://localhost:8000/portfolio/">Volver a Portfolio</a>
         </div>
     </div>
+
+    {% for post in posts %}
+        <article> 
+            <h1>
+                <a href="">
+                    {{ post.title }}
+                </a>
+            </h1>
+
+            <time>
+                published: {{ post.published_date }}
+            </time> 
+
+            <p>
+                {{ post.text|linebreaksbr }} <!-- El linebreaksbr convierte el salto de linea en parrafo -->
+            </p>
+
+            <br>
+        </article>
+    {% endfor %}
+  
+    
     
 </body>
 </html>
