@@ -25,7 +25,7 @@ if not settings.TESTING:
     urlpatterns = [
         path("blog/", include("blog.urls")),
         
-        path("portfolio/", include("portfolio.urls")),
+        path("", include("portfolio.urls")),
         
         path("admin/", admin.site.urls),
     

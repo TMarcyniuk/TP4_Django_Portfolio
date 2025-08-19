@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog.html</title>
+</head>
+<body class="body">
+    <div class="header">
+        <div class="header_items">
+            <p>Blog Personal</p>
+        </div>
+        <div class="header_items">
+            <a href="http://localhost:8000/portfolio/">Volver a Portfolio</a>
+        </div>
+    </div>
+
+    <div> 
+    {% block content %}
+    {% endblock %}
+    </div>
+  
+    
+    
+</body>
+</html>
