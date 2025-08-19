@@ -19,12 +19,15 @@
             <p>Blog Personal</p>
         </div>
         
+        
         <div class="header_items">
+            {% if user.is_authenticated %}
             <a href="{% url 'post_new' %}" class="top-menu">
                 {% include './icons/plus-square.svg' %}
             </a>
-    
+            {% endif %}
         </div>
+        
 
         <div class="header_items">
             <a href="http://localhost:8000/portfolio/">Volver a Portfolio</a>
