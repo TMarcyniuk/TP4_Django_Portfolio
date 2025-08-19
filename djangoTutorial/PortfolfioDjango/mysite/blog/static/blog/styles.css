@@ -156,6 +156,10 @@ body {
     transition: 0.3s ease, color 0.3s ease;
 }
 
+.comment {
+    margin: 20px 0px 20px 20px;
+}
+
 
 /* Theme toggle icon animation */
 .theme-toggle-icon {
