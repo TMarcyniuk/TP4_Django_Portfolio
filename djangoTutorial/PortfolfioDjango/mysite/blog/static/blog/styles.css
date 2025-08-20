@@ -82,7 +82,6 @@
 .header_items {
     background-color: transparent;
     text-align: center;
-    margin-right: 20px;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -94,6 +93,8 @@
     text-decoration: none;
     position: relative;
     transition: ease 0.5s;
+    justify-content: center;
+    align-items: center;
     padding: 5px;
     font-size: 20px; 
 }
@@ -114,13 +115,13 @@
     width: 100%;
 }
 
-.header_fotos {
+.header_icons {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.header_fotos img {
+.header_icons img, svg {
     height: 50px; 
     width: 50px; 
     border-radius: 50%;
@@ -128,7 +129,7 @@
     border: 2px solid var(--text-primary);
 }
 
-.header_fotos button {
+.header_icons button {
     height: 50px;
     width: 50px;
     border-radius: 50%;
@@ -143,7 +144,7 @@
     transition: all 0.3s ease;
 }
 
-.header_fotos button:hover {
+.header_icons button:hover {
     background-color: var(--text-primary);
     color: var(--header-bg);
     transform: scale(1.1);
@@ -158,6 +159,15 @@ body {
 
 .comment {
     margin: 20px 0px 20px 20px;
+}
+
+
+.header_icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px; 
+    width: 50px; 
 }
 
 
