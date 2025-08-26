@@ -1,9 +1,11 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-<h1>New comment</h1>
-<form method="POST" class="post-form">{% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="save btn btn-secondary">Send</button>
-</form>
+
+    <form method="POST" class="post-form">{% csrf_token %}
+        <h1>Nuevo Comentario</h1>
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-secon dary">Send</button>
+    </form>
+    
 {% endblock %}

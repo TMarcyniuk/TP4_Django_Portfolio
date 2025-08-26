@@ -4,13 +4,13 @@
     {% for post in posts %}
         <article class="post">
 
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2> <!--  post_detail quiere decir que Django espera una URL en blog/urls.py con name=post_detail y pk es para cambiar la primary key (a si no es 1,2,3)-->
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.título }}</a></h2> <!--  post_detail quiere decir que Django espera una URL en blog/urls.py con name=post_detail y pk es para cambiar la primary key (a si no es 1,2,3)-->
             
             <time class="date">
                 {{ post.published_date }}
             </time>
            
-            <p>{{ post.text|linebreaksbr }}</p>
+            <p>{{ post.texto|linebreaksbr }}</p>
             <p>Comentarios: {{ post.approved_comments.count }}</p>
         </article>
     {% endfor %}
