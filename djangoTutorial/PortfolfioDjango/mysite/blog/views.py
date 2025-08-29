@@ -11,12 +11,12 @@ from django.contrib.auth.decorators import login_required
 
 class IndexView(ListView):
     model = Post
-    template_name = "blog/index.html"
+    template_name = "blog/post_list.html"
     context_object_name = "Post"  
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date') #usar posts para referirse al queryset
-    return render(request, 'blog/index.html', {'posts': posts}) #los dobles corchetes dentro de index.html se imprimen en pantalla, cuando hay uno solo es solo código de python
+    return render(request, 'blog/post_list.html', {'posts': posts}) #los dobles corchetes dentro de post_list.html se imprimen en pantalla, cuando hay uno solo es solo código de python
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
