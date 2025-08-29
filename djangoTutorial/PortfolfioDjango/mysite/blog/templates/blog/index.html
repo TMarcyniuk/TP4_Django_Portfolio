@@ -11,7 +11,7 @@
             </time>
            
             <p>{{ post.texto|linebreaksbr }}</p>
-            <p>Comentarios: {{ post.approved_comments.count }}</p>
+            <p>Comentarios: {{ post.comments.count }}</p>
         </article>
     {% endfor %}
 {% endblock %}

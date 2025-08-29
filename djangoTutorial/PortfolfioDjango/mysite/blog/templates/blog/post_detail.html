@@ -4,48 +4,62 @@
     <article class="post">
         <aside class="actions">
             {% if user.is_authenticated %}
-                <a class="btn btn-secondary" href="{% url 'post_edit' pk=post.pk %}">
-                {% include './icons/pencil-square.svg' %}
+                <a href="{% url 'post_edit' pk=post.pk %}">
+                    {% include './icons/pencil-square.svg' %}
+                </a>
             {% endif %}
-            </a>
         </aside>
 
-        {% if post.published_date %}
+        <h2>{{ post.título }}</h2>
+         {% if post.published_date %}
             <time class="date">
                 {{ post.published_date }}
             </time>
         {% endif %}
-        <h2>{{ post.título }}</h2>
         <p>{{ post.texto|linebreaksbr }}</p>
+
+        {% if post.archivo %}
+            {% if post.is_image %}
+                <img class="post_archivo" src="{{ post.archivo.url }}" alt="Imagen del post">
+            {% elif post.is_video %}
+                <video class="post_archivo" controls>
+                    <source src="{{ post.archivo.url }}" type="video/mp4">
+                    <source src="{{ post.archivo.url }}" type="video/webm">
+                    <source src="{{ post.archivo.url }}" type="video/mov">
+                    Tu navegador no soporta el elemento video.
+                </video>
+            {% endif %}
+        {% endif %}
     </article>
 
     <hr>
 
-    <a class="btn btn-secondary" role="button" href="{% url 'add_comment_to_post' pk=post.pk %}">Agregar comentario</a>
-
-    {% for comment in post.comments.all %}
-    {% if user.is_authenticated or comment.approved_comment %}
-    <div class="comment">
-
-        <strong>{{ comment.autor }}</strong>
-        
-         <div class="date">
-            {{ comment.created_date }}
-            {% if not comment.approved_comment %}
-                <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}">
-                   {% include './icons/trash3.svg' %}
-                </a>
-                <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}">
-                   {% include './icons/hand-thumbs-up.svg' %}
-                </a>
-            {% endif %}
-        </div>
-        
-        <p>{{ comment.texto|linebreaks }}</p>
+    <h2 class="comments-section-title">Comentarios:</h2>
     
+    <div class="add-comment-container">
+        <a class="btn btn-secondary" role="button" href="{% url 'add_comment_to_post' pk=post.pk %}">Agregar comentario</a>
     </div>
-    {% endif %}
-{% empty %}
-    <p>No hay comentarios en este post</p>
-{% endfor %}
+
+    {% for comment in post.recent_comments %}
+        <div class="comment">
+            <div class="comment-actions">
+                {% if user.is_authenticated %}
+                    <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}">
+                       {% include './icons/trash3.svg' %}
+                    </a>
+                {% endif %}
+            </div>
+
+            <strong>{{ comment.autor }}</strong>
+            
+            <div class="date">
+                {{ comment.created_date }}
+            </div>
+            
+            <p>{{ comment.texto|linebreaks }}</p>
+
+        </div>
+    {% empty %}
+        <p class="no-comments-message">No hay comentarios en este post</p>
+    {% endfor %}
 {% endblock %}

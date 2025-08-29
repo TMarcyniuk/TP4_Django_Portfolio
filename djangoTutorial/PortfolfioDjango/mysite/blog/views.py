@@ -15,7 +15,7 @@ class IndexView(ListView):
     context_object_name = "Post"  
 
 def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date') #usar posts para referirse al queryset
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date') #usar posts para referirse al queryset
     return render(request, 'blog/index.html', {'posts': posts}) #los dobles corchetes dentro de index.html se imprimen en pantalla, cuando hay uno solo es solo código de python
 
 def post_detail(request, pk):
@@ -24,7 +24,7 @@ def post_detail(request, pk):
 
 def post_new(request):
     if request.method == "POST": #despues de guardar el post manda la data como POST en vez de GET abajo en la terminal (no tiene que ver que un post del blog, solo es una coincidencia), esto es para cargarlo, aunque por ahora no tiene autor
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)  # Agregar request.FILES para archivos
         if form.is_valid():
             post = form.save(commit=False)
             post.autor = request.user
@@ -38,7 +38,7 @@ def post_new(request):
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
-        form = PostForm(request.POST, instance=post)
+        form = PostForm(request.POST, request.FILES, instance=post)  # Agregar request.FILES
         if form.is_valid():
             post = form.save(commit=False)
             post.autor = request.user
@@ -63,13 +63,8 @@ def add_comment_to_post(request, pk):
     return render(request, 'blog/add_comment_to_post.html', {'form': form})
 
 @login_required
-def comment_approve(request, pk):
-    comment = get_object_or_404(Comment, pk=pk)
-    comment.approve()
-    return redirect('post_detail', pk=comment.post.pk)
-
-@login_required
 def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
+    post_pk = comment.post.pk
     comment.delete()
-    return redirect('post_detail', pk=comment.post.pk)
+    return redirect('post_detail', pk=post_pk)

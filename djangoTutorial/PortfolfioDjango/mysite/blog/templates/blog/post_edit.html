@@ -2,7 +2,7 @@
 
 {% block content %}
     
-        <form method="POST" class="post-form">{% csrf_token %}
+        <form method="POST" enctype="multipart/form-data" class="post-form">{% csrf_token %}
             <h2>Editar Post</h2>
             {{ form.as_p }}
             <button type="submit" class="save btn btn-secondary">Guardar</button>
